@@ -148,16 +148,20 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     function updateTableHeaders() {
         const tableHeaders = document.querySelectorAll("th");
+        const moduleNames = document.querySelectorAll("tbody td:first-child");
 
-        if (window.innerWidth < 660) {
+        if (tableHeaders.length < 6 || moduleNames.length < 7) {
+            return; // Prevent errors if table structure is incomplete
+        }
+
+        if (window.innerWidth < 440) {
             tableHeaders[0].textContent = "Modules"; 
             tableHeaders[1].textContent = "Coef"; 
             tableHeaders[2].textContent = "TD"; 
             tableHeaders[3].textContent = "TP"; 
             tableHeaders[4].textContent = "Exam"; 
-            tableHeaders[5].textContent = "Moyenne"; 
+            tableHeaders[5].textContent = "Moy"; 
 
-            const moduleNames = document.querySelectorAll("tbody td:first-child");
             moduleNames[0].textContent = "Algo";
             moduleNames[1].textContent = "Archi";
             moduleNames[2].textContent = "Se";
@@ -165,36 +169,35 @@ document.addEventListener("DOMContentLoaded", function () {
             moduleNames[4].textContent = "Algebre";
             moduleNames[5].textContent = "Anglais";
             moduleNames[6].textContent = "Elect";
-        } else {
-            tableHeaders[0].textContent = "Modules";
-            tableHeaders[1].textContent = "Coef";
-            tableHeaders[2].textContent = "TD";
-            tableHeaders[3].textContent = "TP";
-            tableHeaders[4].textContent = "Exam";
+
+            if (moduleNames.length > 7) {
+                moduleNames[7].textContent = "S1"; 
+            }
+        } 
+        else if (window.innerWidth < 700) {
+            tableHeaders[5].textContent = "Moyenne"; 
+
+            moduleNames[0].textContent = "Algo";
+            moduleNames[1].textContent = "Archi";
+            moduleNames[2].textContent = "Se";
+            moduleNames[3].textContent = "Analyse";
+            moduleNames[4].textContent = "Algebre";
+            moduleNames[5].textContent = "Anglais";
+            moduleNames[6].textContent = "Elect";
+        } 
+        else {
             tableHeaders[5].textContent = "Moyenne Module";
 
-            const moduleNames = document.querySelectorAll("tbody td:first-child");
             moduleNames[0].textContent = "Algorithmique et structure de données";
             moduleNames[1].textContent = "Architecture des ordinateurs";
-            moduleNames[2].textContent = "Systeme d'exploitation";
+            moduleNames[2].textContent = "Système d'exploitation";
             moduleNames[3].textContent = "Analyse";
             moduleNames[4].textContent = "Algèbre";
             moduleNames[5].textContent = "Anglais";
-            moduleNames[6].textContent = "Electronique";
+            moduleNames[6].textContent = "Électronique";
         }
     }
 
     updateTableHeaders();
-
     window.addEventListener("resize", updateTableHeaders);
 });
-
-
-
-
-
-
-
-
-
-
