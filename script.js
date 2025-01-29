@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const examInputArch = document.querySelector("tbody tr:nth-child(2) td:nth-child(5) input");
     const moyenneCellArch = document.querySelector("tbody tr:nth-child(2) td:nth-child(6)");
 
-    const tdInputSys = document.querySelector("tbody tr:nth-child(3) td:nth-child(3) input");
+    const tpInputSys = document.querySelector("tbody tr:nth-child(3) td:nth-child(4) input");
     const examInputSys = document.querySelector("tbody tr:nth-child(3) td:nth-child(5) input");
     const moyenneCellSys = document.querySelector("tbody tr:nth-child(3) td:nth-child(6)");
 
@@ -20,11 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const examInputAlge = document.querySelector("tbody tr:nth-child(5) td:nth-child(5) input");
     const moyenneCellAlge = document.querySelector("tbody tr:nth-child(5) td:nth-child(6)");
 
-    const tdInputAng = document.querySelector("tbody tr:nth-child(6) td:nth-child(3) input");
+    const tpInputAng = document.querySelector("tbody tr:nth-child(6) td:nth-child(4) input");
     const examInputAng = document.querySelector("tbody tr:nth-child(6) td:nth-child(5) input");
     const moyenneCellAng = document.querySelector("tbody tr:nth-child(6) td:nth-child(6)");
 
-    const tdInputElec = document.querySelector("tbody tr:nth-child(7) td:nth-child(3) input");
     const examInputElec = document.querySelector("tbody tr:nth-child(7) td:nth-child(5) input");
     const moyenneCellElec = document.querySelector("tbody tr:nth-child(7) td:nth-child(6)");
 
@@ -54,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function calculateMoyenneSys() {
-        let td = parseFloat(tdInputSys.value) || 0;
+        let td = parseFloat(tpInputSys.value) || 0;
         let exam = parseFloat(examInputSys.value) || 0;
         let moyenne = ((td * 0.4) + (exam * 0.6)) * 3;
         moyenneCellSys.textContent = moyenne.toFixed(2);
@@ -81,18 +80,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function calculateMoyenneAng() {
-        let td = parseFloat(tdInputAng.value) || 0;
+        let tp = parseFloat(tpInputAng.value) || 0;
         let exam = parseFloat(examInputAng.value) || 0;
-        let moyenne = ((td * 0.4) + (exam * 0.6)) * 1;
+        let moyenne = ((tp * 0.5) + (exam * 0.5)) * 1;
         moyenneCellAng.textContent = moyenne.toFixed(2);
         moyennesModules[5] = moyenne;
         updateMoyenneFinale();
     }
 
     function calculateMoyenneElec() {
-        let td = parseFloat(tdInputElec.value) || 0;
+        
         let exam = parseFloat(examInputElec.value) || 0;
-        let moyenne = ((td * 0.4) + (exam * 0.6)) * 1;
+        let moyenne = exam ; 
         moyenneCellElec.textContent = moyenne.toFixed(2);
         moyennesModules[6] = moyenne;
         updateMoyenneFinale();
@@ -128,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tdInputArch.addEventListener("input", calculateMoyenneArch);
     examInputArch.addEventListener("input", calculateMoyenneArch);
 
-    tdInputSys.addEventListener("input", calculateMoyenneSys);
+    tpInputSys.addEventListener("input", calculateMoyenneSys);
     examInputSys.addEventListener("input", calculateMoyenneSys);
 
     tdInputAna.addEventListener("input", calculateMoyenneAna);
@@ -137,10 +136,10 @@ document.addEventListener("DOMContentLoaded", function () {
     tdInputAlge.addEventListener("input", calculateMoyenneAlge);
     examInputAlge.addEventListener("input", calculateMoyenneAlge);
 
-    tdInputAng.addEventListener("input", calculateMoyenneAng);
+    tpInputAng.addEventListener("input", calculateMoyenneAng);
     examInputAng.addEventListener("input", calculateMoyenneAng);
 
-    tdInputElec.addEventListener("input", calculateMoyenneElec);
+  
     examInputElec.addEventListener("input", calculateMoyenneElec);
 });
 
@@ -150,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateTableHeaders() {
         const tableHeaders = document.querySelectorAll("th");
 
-        if (window.innerWidth < 500) {
+        if (window.innerWidth < 660) {
             tableHeaders[0].textContent = "Modules"; 
             tableHeaders[1].textContent = "Coef"; 
             tableHeaders[2].textContent = "TD"; 
@@ -189,4 +188,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("resize", updateTableHeaders);
 });
+
+
+
+
+
+
+
+
+
 
