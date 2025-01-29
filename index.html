@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table with Input</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Modules</th>
+                <th>Coef</th>
+                <th>TD</th>
+                <th>TP</th>
+                <th>Exam</th>
+                <th>Moyenne Module</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Algorithmique et structure de données</td>
+                <td>5</td>
+                <td><input type="number" class="note-input" placeholder="TD"></td>
+                <td><input type="number" class="note-input" placeholder="TP"></td>
+                <td><input type="number" class="note-input" placeholder="Exam"></td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+                <td>Architecture des ordinateurs</td>
+                <td>4</td>
+                <td><input type="number" class="note-input" placeholder="TD"></td>
+                <td></td>
+                <td><input type="number" class="note-input" placeholder="Exam"></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Systeme d'exploitation</td>
+                <td>3</td>
+                <td><input type="number" class="note-input" placeholder="TD"></td>
+                <td></td>
+                <td><input type="number" class="note-input" placeholder="Exam"></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Analyse</td>
+                <td>3</td>
+                <td><input type="number" class="note-input" placeholder="TD"></td>
+                <td></td>
+                <td><input type="number" class="note-input" placeholder="Exam"></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Algèbre</td>
+                <td>3</td>
+                <td><input type="number" class="note-input" placeholder="TD"></td>
+                <td></td>
+                <td><input type="number" class="note-input" placeholder="Exam"></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Anglais</td>
+                <td>1</td>
+                <td><input type="number" class="note-input" placeholder="TD"></td>
+                <td></td>
+                <td><input type="number" class="note-input" placeholder="Exam"></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Electronique</td>
+                <td>1</td>
+                <td><input type="number" class="note-input" placeholder="TD"></td>
+                <td></td>
+                <td><input type="number" class="note-input" placeholder="Exam"></td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Semestre 1</td>
+                <td id="coefTotal">20</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="MoyenneFinale">0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

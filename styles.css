@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+table {
+    width: 100%; 
+    max-width: 1000px; 
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: fixed; 
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:last-child {
+    background-color: rgba(128, 128, 128, 0.656);
+    font-weight: bold;
+}
+
+.note-input {
+    width: 80%;
+    padding: 6px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.note-input:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+.note-input::-webkit-outer-spin-button,
+.note-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#MoyenneFinale {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+@media (max-width: 500px) {
+   
+    th, td {
+        padding: 8px;
+        word-wrap: break-word;
+        font-size: 10px; 
+    }
+
+
+   
+
+
+    
+}
